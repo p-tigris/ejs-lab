@@ -12,8 +12,7 @@
   <% ["Mains", "Desserts", "Sides"].forEach((category) => { %>
     <h2><%= category %></h2>
     <ul>
-      <% menu.forEach((item) => { %>
-      <% if (item.category === category.toLowerCase()) { %>
+      <% menu.filter((item) => item.category === category.toLowerCase()).forEach((item) => { %>
         <% if (item.rating === 5) { %>
             <li><h3><b><%= item.name %></b> ⭐</h3></li> 
         <% } else { %>
@@ -22,7 +21,6 @@
           <p><b>Price:</b> $<%= item.price %></p>
           <p><b>Rating:</b> <%= item.rating %></p>
           <p><i><%= item.details %></i></p>
-        <% } %>
       <% }) %>
     </ul>
   <% }) %>
