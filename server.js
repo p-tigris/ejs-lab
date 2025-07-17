@@ -70,7 +70,7 @@ app.get('/menu/:category', (req, res) => {
   const category = req.params.category;
   res.render('category.ejs', {
     menuItems: RESTAURANT.menu.filter((item) => item.category === category),
-    name: category.charAt(0).toUpperCase() + category.slice(1, category.length)
+    name: category.charAt(0).toUpperCase() + category.slice(1)
   })
 })
 
